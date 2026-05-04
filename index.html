@@ -2140,7 +2140,7 @@ function playSigmaVxz() {
   Jmol.script(myJmol, "save orientation sigmaView;");
   Jmol.script(myJmol, h2oBaseModel + "restore orientation sigmaView;");
 
-  // 等待模型加载完毕后，再绘制平面并启动原子互换动画
+  // 等待模型加载完毕后，再绘制平面、坐标轴并启动原子互换动画
   setTimeout(() => {
     // 清除可能残留的绘制对象
     Jmol.script(myJmol, "isosurface delete;");
@@ -2160,21 +2160,26 @@ function playSigmaVxz() {
       "color [30,80,200];"
     );
 
-    // 平面法向量虚线（展示反射方向）
+    // ── 绘制简化坐标轴（箭头），与乙烯 xz 平面一致 ──
+    Jmol.script(myJmol, "draw axisX arrow {0 0 0} {2.0 0 0} width 0.05 color red;");
+    Jmol.script(myJmol, "draw axisY arrow {0 0 0} {0 2.0 0} width 0.08 color green;"); // 法线方向 Y 加粗
+    Jmol.script(myJmol, "draw axisZ arrow {0 0 0} {0 0 2.0} width 0.05 color blue;");
+
+    // 在轴末端添加大号字母标签
+    Jmol.script(myJmol, "draw labelX LABEL {2.2 0 0} \"X\" color red font 28;");
+    Jmol.script(myJmol, "draw labelY LABEL {0 2.2 0} \"Y\" color green font 28;");
+    Jmol.script(myJmol, "draw labelZ LABEL {0 0 2.2} \"Z\" color blue font 28;");
+
+    // 屏幕说明
     Jmol.script(myJmol,
-      "draw sigmaNormal VECTOR {0.0 0.0 0.0} {0.0 0.8 0.0} " +
-      "color [51,133,255] width 0.06 dash 4;"
-    );
-    Jmol.script(myJmol,
-      "draw sigmaNormal VECTOR {0.0 0.0 0.0} {0.0 -0.8 0.0} " +
-      "color [51,133,255] width 0.06 dash 4;"
+      "set echo axisLab 20% 80%; " +
+      "echo X (红) | Y (绿) | Z (蓝)  [σ(xz) 平面，法线沿 Y]"
     );
 
     // 开始原子互换动画
     startSigmaVxzAtomSwap();
   }, 400);
-}
-function startSigmaVxzAtomSwap() {
+}function startSigmaVxzAtomSwap() {
   var steps = 20;
   var delay = 0.06;
   // 两个氢原子的 y 坐标分别为 +0.757 和 -0.757，互换时沿 y 方向移动
