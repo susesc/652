@@ -433,24 +433,24 @@ button:disabled {
     <div class="section">
       <div class="section-title">选择点群类型</div>
       <button class="pg-btn active" onclick="selectPointGroup('all')">全部分子</button>
-      <button class="pg-btn" onclick="selectPointGroup('C2v')">C<sub>2</sub><sub>v</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('C3v')">C<sub>3</sub><sub>v</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('C2')">C<sub>2</sub> </button>
-      <button class="pg-btn" onclick="selectPointGroup('C3')">C<sub>3</sub> </button>
-      <button class="pg-btn" onclick="selectPointGroup('C4v')">C<sub>4</sub><sub>v</sub> </button>
-    <button class="pg-btn" onclick="selectPointGroup('D2d')">D<sub>2</sub><sub>d</sub></button>
-   <button class="pg-btn" onclick="selectPointGroup('S4')">S<sub>4</sub> </button>
-   <button class="pg-btn" onclick="selectPointGroup('D5h')">D<sub>5</sub><sub>h</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('C2h')">C<sub>2</sub><sub>h</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('D∞h')">D<sub>∞</sub><sub>h</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('D3h')">D<sub>3h</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('D6h')">D<sub>6h</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('D2h')">D<sub>2h</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('D4h')">D<sub>4h</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('D3d')">D<sub>3d</sub></button>
-      <button class="pg-btn" onclick="selectPointGroup('Td')">T<sub>d</sub> </button>
-     <button class="pg-btn" onclick="selectPointGroup('Ih')">I<sub>h</sub> </button>
-     <button class="pg-btn" onclick="selectPointGroup('Oh')">O<sub>h</sub></button>
+      <button class="pg-btn" onclick="selectPointGroup('C2v')">C<sub>2</sub><sub>v</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('C3v')">C<sub>3</sub><sub>v</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('C2')">C<sub>2</sub> 点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('C3')">C<sub>3</sub> 点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('C4v')">C<sub>4</sub><sub>v</sub> 点群</button>
+    <button class="pg-btn" onclick="selectPointGroup('D2d')">D<sub>2</sub><sub>d</sub>点群</button>
+   <button class="pg-btn" onclick="selectPointGroup('S4')">S<sub>4</sub> 点群</button>
+   <button class="pg-btn" onclick="selectPointGroup('D5h')">D<sub>5</sub><sub>h</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('C2h')">C<sub>2</sub><sub>h</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('D∞h')">D<sub> ∞</sub><sub>h</sub> 点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('D3h')">D<sub>3h</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('D6h')">D <sub>6h</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('D2h')">D<sub>2h</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('D4h')">D<sub>4h</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('D3d')">D<sub>3d</sub>点群</button>
+      <button class="pg-btn" onclick="selectPointGroup('Td')">T<sub>d</sub> 点群</button>
+     <button class="pg-btn" onclick="selectPointGroup('Ih')">I<sub>h</sub> 点群</button>
+     <button class="pg-btn" onclick="selectPointGroup('Oh')">O<sub>h</sub> 点群</button>
       <div class="status-indicator" id="pg-status">当前显示: 全部分子</div>
     </div>
 
@@ -747,27 +747,27 @@ var molecules = [
   {file: "SF6.mol", displayName: "SF₆", pointGroup: "Oh", cnList: [4,3,2]}
 ];
 var pointGroupText = {
-  "water.xyz":       { name:"C₂ᵥ", text:"水分子属于 C₂ᵥ 点群，具有一个 C₂ 主轴和两个垂直镜面 σᵥ。" },
-  "h2o2.mol":        { name:"C₂",  text:"过氧化氢为非平面构型，属于 C₂ 点群，仅包含一个 C₂ 旋转轴。" },
-  "C2H2Cl2.mol":     { name:"C₂ʰ", text:"反式-1,2-二氯乙烯属于 C₂ʰ 点群，具有 C₂ 轴、σₕ 镜面以及反演中心 i。" },
-  "CHCl3.mol":       { name:"C₃",  text:"氯仿（CHCl₃）属于 C₃v 点群，具有一个 C₃ 主轴和三个 σᵥ 镜面。" },
-  "ClHC=C=CHCl.mol": { name:"C₂",  text:"ClHC=C=CHCl 为非平面累积烯烃，属于 C₂ 点群，仅含一个 C₂ 旋转轴。" },
-  "h3c-ccl3.mol":    { name:"C₃",  text:"CH₃–CCl₃ 分子（重叠构型）属于 C₃ 点群，具有一条 C₃ 主轴，无镜面。" },
-  "CO2.mol":         { name:"D∞ʰ", text:"CO₂ 为线性分子，具有反演中心 i、无穷多个 C₂ 轴及 σₕ、σᵥ。" },
-  "BF3.mol":         { name:"D₃ʰ", text:"BF₃ 为平面三角结构，属于 D₃ʰ 点群，具有 C₃ 主轴与 σₕ。" },
-  "C6H6.mol":        { name:"D₆ʰ", text:"苯分子属于 D₆ʰ 点群，具有 C₆ 主轴、多个 C₂ 轴、σₕ、σᵥ 及反演中心。" },
-  "H2C=CH2.mol":     { name:"D₂ʰ", text:"乙烯为平面分子，具有三个互相垂直的 C₂ 轴和反演中心。" },
-  "H2CCCH2.mol":     { name:"D₂<sub>d</sub>", text:"丙二烯（H₂CCCH₂）具有 D₂d 对称性，包含 C₂ 主轴以及旋转反射轴 S₄。" },
-  "PtCl4(e2-).mol":  { name:"D₄ʰ", text:"平方平面 PtCl₄²⁻ 属于 D₄ʰ 点群，具有 C₄ 主轴与 σₕ。" },
-  "SbCl5(e2-).mol":  { name:"C₄ᵥ", text:"SbCl₅²⁻ 为四方锥构型，属于 C₄ᵥ 点群，具有 C₄ 轴和四个 σᵥ 镜面。" },
-  "cyclohexane_chair.xyz": { name:"D₃d", text:"环己烷椅式构型属于 D₃d 点群，具有一个 C₃ 主轴、三个 C₂ 轴、反演中心 i 和三个 σd 镜面。其 S₆ 非真旋转轴（S₆ = C₆·σₕ）是该点群的重要对称元素。" },
-  "ferrocene.xyz":         { name:"D₅h", text:"二茂铁（重叠构型）属于 D₅h 点群，具有一个 C₅ 主轴、五个 C₂ 轴以及一个水平镜面 σₕ。" },
+  "water.xyz":       { name:"C<sub>2v</sub>", text:"水分子属于 C<sub>2v</sub> 点群，具有一个 C₂ 主轴和两个垂直镜面 σᵥ。" },
+  "h2o2.mol":        { name:"C<sub>2</sub>",  text:"过氧化氢为非平面构型，属于 C₂ 点群，仅包含一个 C₂ 旋转轴。" },
+  "C2H2Cl2.mol":     { name:"C<sub>2h</sub>", text:"反式-1,2-二氯乙烯属于 C<sub>2h</sub> 点群，具有 C₂ 轴、σₕ 镜面以及反演中心 i。" },
+  "CHCl3.mol":       { name:"C<sub>3v</sub>",  text:"氯仿（CHCl₃）属于 C<sub>3v</sub> 点群，具有一个 C₃ 主轴和三个 σᵥ 镜面。" },
+  "ClHC=C=CHCl.mol": { name:"C<sub>2</sub>",  text:"ClHC=C=CHCl 为非平面累积烯烃，属于 C <sub>2</sub>点群，仅含一个 C₂ 旋转轴。" },
+  "h3c-ccl3.mol":    { name:"C<sub>3</sub>",  text:"CH₃–CCl₃ 分子（重叠构型）属于 C₃ 点群，具有一条 C₃ 主轴，无镜面。" },
+  "CO2.mol":         { name:"D<sub>∞h</sub>", text:"CO₂ 为线性分子，具有反演中心 i、无穷多个 C₂ 轴及 σₕ、σᵥ。" },
+  "BF3.mol":         { name:"D<sub>3h</sub>", text:"BF₃ 为平面三角结构，属于 D<sub>3h</sub> 点群，具有 C₃ 主轴与 σₕ。" },
+  "C6H6.mol":        { name:"D<sub>6h</sub>", text:"苯分子属于 D<sub>6h</sub> 点群，具有 C₆ 主轴、多个 C₂ 轴、σₕ、σᵥ 及反演中心。" },
+  "H2C=CH2.mol":     { name:"D<sub>2h</sub>", text:"乙烯为平面分子，具有三个互相垂直的 C₂ 轴和反演中心。" },
+  "H2CCCH2.mol":     { name:"D<sub>2d</sub>", text:"丙二烯（H₂CCCH₂）具有 D₂d 对称性，包含 C₂ 主轴以及旋转反射轴 S₄。" },
+  "PtCl4(e2-).mol":  { name:"D<sub>4h</sub>", text:"平方平面 PtCl₄²⁻ 属于 D<sub>4h</sub>点群，具有 C₄ 主轴与 σₕ。" },
+  "SbCl5(e2-).mol":  { name:"C<sub>4v</sub>", text:"SbCl₅²⁻ 为四方锥构型，属于 C₄ᵥ 点群，具有 C₄ 轴和四个 σᵥ 镜面。" },
+  "cyclohexane_chair.xyz": { name:"D<sub>3d</sub>", text:"环己烷椅式构型属于 D₃d 点群，具有一个 C₃ 主轴、三个 C₂ 轴、反演中心 i 和三个 σd 镜面。其 S₆ 非真旋转轴（S₆ = C₆·σₕ）是该点群的重要对称元素。" },
+  "ferrocene.xyz":         { name:"D<sub>5h</sub>", text:"二茂铁（重叠构型）属于 D₅h 点群，具有一个 C₅ 主轴、五个 C₂ 轴以及一个水平镜面 σₕ。" },
   "tetrahedron.xyz":       { name:"T<sub>d</sub>", text:"正四面体属于 T<sub>d</sub> 点群。它具有 4 条 C₃ 轴（过顶角）、3 条 C₂ 轴（过对边中点连线），以及 3 条 S₄ 轴和 6 个 σ<sub>d</sub> 镜面。本演示通过多面体渲染展示其封闭结构。" },
   "(CH2)6N4.mol":          { name:"T<sub>d</sub>", text:"乌洛托品（六亚甲基四胺）属于 T<sub>d</sub> 点群，具有 4 条 C₃ 轴和 3 条 C₂ 轴。" },
   "B12H12(2-).mol":        { name:"I<sub>h</sub>", text:"B₁₂H₁₂²⁻ 为闭式十二硼烷阴离子，具有二十面体对称性，属于 I<sub>h</sub> 点群，包含 C₅、C₃、C₂ 旋转轴及反演中心等对称元素。" },
   "C8H8.mol":              { name:"O<sub>h</sub>", text:"立方烷（C₈H₈）具有 O<sub>h</sub> 对称性，包含 C₄、C₃、C₂ 旋转轴及反演中心。" },
   "CH4.mol":               { name:"T<sub>d</sub>", text:"甲烷属于 T<sub>d</sub> 点群，具有 4 条 C₃ 轴和 3 条 C₂ 轴以及多个 σ<sub>d</sub> 镜面。" },
-  "N4S4F4.mol":            { name:"S₄", text:"N₄S₄F₄ 具有 S₄ 非真旋转轴点群，包含一个 S₄ 轴和两个 C₂ 轴。" },
+  "N4S4F4.mol":            { name:"S<sub>4</sub>", text:"N₄S₄F₄ 具有 S₄ 非真旋转轴点群，包含一个 S₄ 轴和两个 C₂ 轴。" },
   "SF6.mol":               { name:"O<sub>h</sub>", text:"六氟化硫属于 O<sub>h</sub> 点群，具有八面体构型，包含 C₄、C₃、C₂ 旋转轴及反演中心。" }
 };// ================================================================
 // 环己烷椅式构型 - 基于 xyz 的原始动态计算模型（用于 S6 等）
